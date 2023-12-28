@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "madewithclay"
+  site-url: "https://Clay-foundation.github.io/documentation"
+  description: "SDK to use Clay, the AI for Earth"
+  repo-branch: main
+  repo-url: "https://github.com/Clay-foundation/documentation"
