@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 import nbdev
 import numpy as np
 import pandas as pd
-import psycopg2
+#import psycopg2
 import rasterio
 from geoalchemy2 import Geometry
 from nbdev.showdoc import show_doc
