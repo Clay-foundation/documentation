@@ -8,7 +8,7 @@ import math
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 from datetime import datetime
 from pathlib import Path
-from typing import List
+from typing import List, Union
 
 import contextily as ctx
 import geopandas as gpd
@@ -49,7 +49,7 @@ class EmbeddingsHandler:
     def __init__(
         self,
         path: Path,  # Path to the file or folder with files
-        max_files: [None, int] = None,
+        max_files: int = None,
     ):  # Max number of files to load, randomly chosen
         self.path = Path(path)
         self.gdf = None
@@ -121,7 +121,7 @@ class EmbeddingsHandler:
         self,
         figsize: [int, int] = (10, 10),  # Size of the plot
         alpha: float = 0.2,  # Transparency of the points
-        max_rows: [int, None] = 10000,  # Random max number of rows to plot
+        max_rows: int = 10000,  # Random max number of rows to plot
         bounds: List[int] = None, # Bounds of the plot [xmin, ymin, xmax, ymax]
         indices: List[int] = None # Indices of the rows to plot
     ):
@@ -203,7 +203,7 @@ class EmbeddingsHandler:
 
     def rgb_imgs(
         self,
-        row_indices: int | List[int],  # Indices of the rows to plot
+        row_indices: Union[int, List[int]],  # Indices of the rows to plot
         local_folder: Path = None,  # Local folder to save the image
         force_fetch: bool = False,
         skip_plot: bool = False # skip plotting, but save them to local_folder
