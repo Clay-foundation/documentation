@@ -4,6 +4,7 @@ on:
     types:
       - closed
   workflow_dispatch:
+  push:
 
 jobs:
   deploy:
