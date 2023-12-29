@@ -19,7 +19,9 @@ jobs:
           pip install -Uq git+https://github.com/fastai/ghapi.git # necessary for enabling pages
           pip install -Uq git+https://github.com/fastai/fastcore.git
           pip install -Uq git+https://github.com/fastai/execnb.git
+          pip install --upgrade setuptools
           pip install nbdev
+          nbdev_export
           pip install -e ".[dev]"
           wget -nv https://www.quarto.org/download/latest/quarto-linux-amd64.deb
           sudo dpkg -i quarto*.deb
@@ -29,6 +31,6 @@ jobs:
         with:
           github_token: ${{ github.token }}
           force_orphan: true
-          publish_dir: ${{ env.NBDEV_DOCS }}
+          publish_dir: ./_docs
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
