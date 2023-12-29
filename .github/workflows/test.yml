@@ -3,8 +3,6 @@ on:
   workflow_dispatch:
   pull_request:
   push:
-    branches: [master]
-
 jobs:
   test:
     strategy:
@@ -23,6 +21,7 @@ jobs:
           # Set AWS credentials as environment variables
           export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
           export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+          pip install awscli
           aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - uses: fastai/workflows/nbdev-ci@master
