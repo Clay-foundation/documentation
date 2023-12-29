@@ -56,9 +56,6 @@ The model can be used in two main ways:
 3.  **Fine-tunning** the model for other tasks, or for other input data.
     E.g. flood detection, crop yields, … See
     [Fine-tunning](Fine-tunning.html).
-4.  **Generative** tasks: E.g. Estimate RGB imagery wihtout clouds or
-    from Synthetic Aperture Radar (SAR) data. See
-    [Generative](Generative.html).
 
 ## How to contribute
 
