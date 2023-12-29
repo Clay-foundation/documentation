@@ -35,8 +35,11 @@ Clay is open source, open data and open for business.
   [Apache](https://github.com/Clay-foundation/model/LICENSE).
 - The Clay model **weights** live on [Huggin Face](#). License:
   [OpenRAIL-M](https://github.com/Clay-foundation/model/blob/main/LICENSE-MODEL.md).
-- The Clay **documentation** lives on here. License: [CC-BY](#).
-- The Clay **SDK** lives on [PyPi](#). License: [Apache](#).
+- The Clay **documentation** [lives on this
+  site](https://clay-foundation.github.io/documentation/). License:
+  [CC-BY](#).
+- The Clay **SDK** lives on
+  [PyPi](https://pypi.org/project/madewithclay/). License: [Apache](#).
 - We maintain a set of **embeddings** on [Source Cooperative](#).
   License: [ODC-BY](#).
 
@@ -55,6 +58,52 @@ The model can be used in two main ways:
 4.  **Generative** tasks: E.g. Estimate RGB imagery wihtout clouds or
     from Synthetic Aperture Radar (SAR) data. See
     [Generative](Generative.html).
+
+## How to contribute
+
+Clay is an open source project, and we welcome contributions of all
+kinds.
+
+The Documentation, python package and notebooks are all the same
+[NBdev](https://nbdev.fast.ai/) project, located
+[here](https://github.com/Clay-foundation/documentation).
+
+> Note: If you want to contribute to the model code, please check the
+> [model repository](https://github.com/Clay-foundation/model).
+
+To install the nbdev project locally, you can use:
+
+``` bash
+git clone git@github.com:Clay-foundation/documentation.git
+cd documentation
+pip install nbdev
+nbdev_install_git_hooks
+```
+
+After you make changes, you can export the notebooks into both the
+package, rendered documentation and clean jupyter notebook execution
+metadata with:
+
+``` bash
+nbdev_prepare
+```
+
+If you want to preview the documentation locally, you can use:
+
+``` bash
+nbdev_preview
+```
+
+To run the test locally, you need to install [Github
+CLI](https://cli.github.com/) and act extension
+`sudo gh extension install nektos/gh-act`. You alse need a local file
+(e.g. `.secrets`) with the AWS credentials to read the Clay buckets.
+Remember to add this file to `.gitignore` to avoid commiting it. Then
+you can run the tests with:
+
+``` bash
+gh act --secret-file .secrets
+```
 
 –
 
