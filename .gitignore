@@ -2,6 +2,7 @@ _docs/
 _proc/
 madewithclay/
 !madewithclay/__init__.py
+data/
 
 *.bak
 .gitattributes
