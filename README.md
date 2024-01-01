@@ -30,10 +30,12 @@ Clay is open source, open data and open for business.
 
 ## Where is what
 
+- Our **website** is [madewithclay.org](https://madewithclay.org).
 - The Clay model **code** lives on
   [Github](https://github.com/Clay-foundation/model). License:
   [Apache](https://github.com/Clay-foundation/model/LICENSE).
-- The Clay model **weights** live on [Huggin Face](#). License:
+- The Clay model **weights** live on [Huggin
+  Face](https://huggingface.co/made-with-clay/Clay/). License:
   [OpenRAIL-M](https://github.com/Clay-foundation/model/blob/main/LICENSE-MODEL.md).
 - The Clay **documentation** [lives on this
   site](https://clay-foundation.github.io/documentation/). License:
@@ -55,9 +57,6 @@ The model can be used in two main ways:
 3.  **Fine-tunning** the model for other tasks, or for other input data.
     E.g. flood detection, crop yields, … See
     [Fine-tunning](Fine-tunning.html).
-4.  **Generative** tasks: E.g. Estimate RGB imagery wihtout clouds or
-    from Synthetic Aperture Radar (SAR) data. See
-    [Generative](Generative.html).
 
 ## How to contribute
 
@@ -96,10 +95,15 @@ nbdev_preview
 
 To run the test locally, you need to install [Github
 CLI](https://cli.github.com/) and act extension
-`sudo gh extension install nektos/gh-act`. You alse need a local file
+`sudo gh extension install nektos/gh-act`.
+
+The “Clay model releases” folder uses a lot of resources to document the
+version releases. To run these you also need access to the `S3` bucket
+with outputs and all the embeddgins. You will need a local file
 (e.g. `.secrets`) with the AWS credentials to read the Clay buckets.
-Remember to add this file to `.gitignore` to avoid commiting it. Then
-you can run the tests with:
+Remember to confirm this file is on `.gitignore` to avoid commiting it.
+
+Then you can run the tests with:
 
 ``` bash
 gh act --secret-file .secrets

@@ -3,10 +3,9 @@ website:
     contents:
       - index.ipynb
       - 00_model.ipynb
-      - 01_embeddings.ipynb
-      - 02_finetunning.ipynb
-      - 03_generative.ipynb
-      - 04_benchmarks.ipynb
+      - 01_inputdata.ipynb
+      - 02_embeddings.ipynb
+      - 03_finetunning.ipynb
       - section: Clay Model releases
         contents:
           - Clay Model releases/Clay roadmap.ipynb
