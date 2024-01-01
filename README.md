@@ -34,7 +34,8 @@ Clay is open source, open data and open for business.
 - The Clay model **code** lives on
   [Github](https://github.com/Clay-foundation/model). License:
   [Apache](https://github.com/Clay-foundation/model/LICENSE).
-- The Clay model **weights** live on [Huggin Face](https://huggingface.co/made-with-clay/Clay/). License:
+- The Clay model **weights** live on [Huggin
+  Face](https://huggingface.co/made-with-clay/Clay/). License:
   [OpenRAIL-M](https://github.com/Clay-foundation/model/blob/main/LICENSE-MODEL.md).
 - The Clay **documentation** [lives on this
   site](https://clay-foundation.github.io/documentation/). License:

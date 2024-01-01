@@ -6,8 +6,6 @@ website:
       - 01_inputdata.ipynb
       - 02_embeddings.ipynb
       - 03_finetunning.ipynb
-      - 04_generative.ipynb
-      - 05_benchmarks.ipynb
       - section: Clay Model releases
         contents:
           - Clay Model releases/Clay roadmap.ipynb
