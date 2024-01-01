@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://Clay-foundation.github.io/documentation/index.html</loc>
+    <lastmod>2024-01-01T22:15:47.341Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Clay-foundation.github.io/documentation/Clay Model releases/clay roadmap.html</loc>
+    <lastmod>2024-01-01T22:15:45.925Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Clay-foundation.github.io/documentation/finetunning.html</loc>
+    <lastmod>2024-01-01T22:15:44.889Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Clay-foundation.github.io/documentation/inputdata.html</loc>
+    <lastmod>2024-01-01T22:15:43.977Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Clay-foundation.github.io/documentation/model.html</loc>
+    <lastmod>2024-01-01T22:15:44.537Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Clay-foundation.github.io/documentation/embeddings.html</loc>
+    <lastmod>2024-01-01T22:15:45.677Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Clay-foundation.github.io/documentation/Clay Model releases/clay v0 release.html</loc>
+    <lastmod>2024-01-01T22:15:46.989Z</lastmod>
+  </url>
+</urlset>

@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Documentation for the Clay Model v0 release.">
+
+<title>madewithclay - Clay Model v0 release</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="madewithclay - Clay Model v0 release">
+<meta property="og:description" content="Documentation for the Clay Model v0 release.">
+<meta property="og:image" content="https://Clay-foundation.github.io/documentation/Clay Model releases/Clay v0 release_files/figure-html/cell-4-output-1.png">
+<meta property="og:site-name" content="madewithclay">
+<meta property="og:image:height" content="389">
+<meta property="og:image:width" content="794">
+<meta name="twitter:title" content="madewithclay - Clay Model v0 release">
+<meta name="twitter:description" content="Documentation for the Clay Model v0 release.">
+<meta name="twitter:image" content="https://Clay-foundation.github.io/documentation/Clay Model releases/Clay v0 release_files/figure-html/cell-4-output-1.png">
+<meta name="twitter:image-height" content="389">
+<meta name="twitter:image-width" content="794">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">madewithclay</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools ms-auto">
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Clay Model releases/clay roadmap.html">Clay Model releases</a></li><li class="breadcrumb-item"><a href="../Clay Model releases/clay v0 release.html">Clay Model v0 release</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clay documentation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../inputdata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Input data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../embeddings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Embeddings</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../finetunning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Finetuning</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Clay Model releases</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Clay Model releases/clay roadmap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Clay Model roadmap</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Clay Model releases/clay v0 release.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Clay Model v0 release</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#model-overview" id="toc-model-overview" class="nav-link active" data-scroll-target="#model-overview">Model Overview</a>
+  <ul class="collapse">
+  <li><a href="#model-card" id="toc-model-card" class="nav-link" data-scroll-target="#model-card">Model Card</a>
+  <ul class="collapse">
+  <li><a href="#model-details" id="toc-model-details" class="nav-link" data-scroll-target="#model-details">Model Details</a></li>
+  </ul></li>
+  <li><a href="#intended-use" id="toc-intended-use" class="nav-link" data-scroll-target="#intended-use">Intended Use</a></li>
+  </ul></li>
+  <li><a href="#training-data-description" id="toc-training-data-description" class="nav-link" data-scroll-target="#training-data-description">Training Data Description</a>
+  <ul class="collapse">
+  <li><a href="#training-information" id="toc-training-information" class="nav-link" data-scroll-target="#training-information">Training Information</a></li>
+  <li><a href="#performance-metrics" id="toc-performance-metrics" class="nav-link" data-scroll-target="#performance-metrics">Performance Metrics</a></li>
+  <li><a href="#known-limitations" id="toc-known-limitations" class="nav-link" data-scroll-target="#known-limitations">Known Limitations</a>
+  <ul class="collapse">
+  <li><a href="#clouds-and-other-source-of-noise" id="toc-clouds-and-other-source-of-noise" class="nav-link" data-scroll-target="#clouds-and-other-source-of-noise">Clouds and other source of “noise”:</a></li>
+  </ul></li>
+  <li><a href="#known-biases" id="toc-known-biases" class="nav-link" data-scroll-target="#known-biases">Known Biases:</a></li>
+  <li><a href="#ethical-considerations" id="toc-ethical-considerations" class="nav-link" data-scroll-target="#ethical-considerations">Ethical Considerations</a></li>
+  </ul></li>
+  <li><a href="#training-specifications" id="toc-training-specifications" class="nav-link" data-scroll-target="#training-specifications">Training Specifications</a>
+  <ul class="collapse">
+  <li><a href="#training-process" id="toc-training-process" class="nav-link" data-scroll-target="#training-process">Training Process</a>
+  <ul class="collapse">
+  <li><a href="#data-factory" id="toc-data-factory" class="nav-link" data-scroll-target="#data-factory">1. Data Factory</a></li>
+  <li><a href="#main-trainning-loop" id="toc-main-trainning-loop" class="nav-link" data-scroll-target="#main-trainning-loop">2. Main Trainning loop</a></li>
+  <li><a href="#embeddings-creation." id="toc-embeddings-creation." class="nav-link" data-scroll-target="#embeddings-creation.">3. Embeddings creation.</a></li>
+  </ul></li>
+  <li><a href="#computational-resources" id="toc-computational-resources" class="nav-link" data-scroll-target="#computational-resources">Computational Resources</a></li>
+  </ul></li>
+  <li><a href="#model-exploration" id="toc-model-exploration" class="nav-link" data-scroll-target="#model-exploration">Model Exploration</a>
+  <ul class="collapse">
+  <li><a href="#embeddings-exploration" id="toc-embeddings-exploration" class="nav-link" data-scroll-target="#embeddings-exploration">Embeddings Exploration</a>
+  <ul class="collapse">
+  <li><a href="#l2norm-distribution" id="toc-l2norm-distribution" class="nav-link" data-scroll-target="#l2norm-distribution">L2norm distribution</a></li>
+  </ul></li>
+  <li><a href="#benchmarking" id="toc-benchmarking" class="nav-link" data-scroll-target="#benchmarking">Benchmarking</a></li>
+  </ul></li>
+  <li><a href="#benchmark-dataset-labels" id="toc-benchmark-dataset-labels" class="nav-link" data-scroll-target="#benchmark-dataset-labels">Benchmark dataset labels</a>
+  <ul class="collapse">
+  <li><a href="#fine-tuning" id="toc-fine-tuning" class="nav-link" data-scroll-target="#fine-tuning">Fine-tuning</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Clay-foundation/documentation/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Clay Model v0 release</h1>
+</div>
+
+<div>
+  <div class="description">
+    Documentation for the Clay Model v0 release.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<!-- WARNING: THIS FILE WAS AUTOGENERATED! DO NOT EDIT! -->
+<section id="model-overview" class="level1">
+<h1>Model Overview</h1>
+<p>This document outlines the v0 release of our deep learning model designed for Earth Observation (EO), leveraging Sentinel satellite data. The model aims to provide advanced insights and analysis for various EO applications.</p>
+<section id="model-card" class="level2">
+<h2 class="anchored" data-anchor-id="model-card">Model Card</h2>
+<p>We follow the <a href="https://modelcards.withgoogle.com/about">Model Card Toolkit</a>. It provides a summary of the model’s purpose and behavior, as well as information on the dataset it was trained on and the people and organizations involved in its creation. The model card is intended to help enable responsible use of AI systems by documenting their use cases and limitations.</p>
+<section id="model-details" class="level3">
+<h3 class="anchored" data-anchor-id="model-details">Model Details</h3>
+<ul>
+<li>Name: Clay Model</li>
+<li>Version: v0.1</li>
+<li>Type: Geospatial Visual Transformer trained with a <a href="https://arxiv.org/abs/1905.09272">MAE</a> objective.</li>
+<li>Training Data: ~1M spatiotemporal locations statistically sampled to contain a variety of land cover types. For each location, the bundle has: 10 Sentinel-2 bands, 2 Sentinel-1 bands and a <a href="#">DEM</a>.</li>
+<li>Domain: Earth Observation</li>
+<li>Author: Clay.foundation</li>
+<li>Contact: info@madewithclay.org</li>
+<li>Release Date: 2023-12-31</li>
+<li>License: For the code, <a href="https://github.com/Clay-foundation/model/blob/main/LICENSE">Apache 2.0</a>. For the trained model <a href="https://github.com/Clay-foundation/model/blob/main/LICENSE-MODEL.md">OPEN RAIL-M</a></li>
+</ul>
+</section>
+</section>
+<section id="intended-use" class="level2">
+<h2 class="anchored" data-anchor-id="intended-use">Intended Use</h2>
+<p>This model is intended as a foundational EO model. It can directly be used to create semantic embeddings, or be finetuned for classification or regression tasks. It can also be finetuned with other input data.</p>
+<p>It is inteded to be used by non-profits, researchers, journalists, developers and data scientists. It is also intended to be used by commercial entities. Hence it is released with an open data and only trained with fully open data.</p>
+</section>
+</section>
+<section id="training-data-description" class="level1">
+<h1>Training Data Description</h1>
+<section id="training-information" class="level2">
+<h2 class="anchored" data-anchor-id="training-information">Training Information</h2>
+<p>The training Objective is a Masked Autoencoder. We mask up to 70% of the input pixels across all bands (same location across bands) and train the model to predict the masked pixels.</p>
+<ul>
+<li><strong>Model Hyperparameters</strong>:
+<ul>
+<li>Effective Batch Size is <code>200</code>. (Batch per GPU - <code>10</code>, and <code>4</code> GPUs. Gradient accumulation every <code>5</code> batches, so <code>4* 10 * 5</code> =&gt; <code>200</code>.</li>
+<li>Learning rate: Cosine Decay with Warm Restarts as our LR scheduler.</li>
+<li>Optimizer: Adam</li>
+<li>Number of parameters: <code>127M</code></li>
+<li>Model filesize: <code>~500MB</code></li>
+<li>Number of epochs: <code>20</code>, for <code>v0.1</code>. <code>02</code> for <code>v0</code>.</li>
+<li>We use the model setup <a href="https://github.com/Clay-foundation/model/blob/main/src/model_clay.py#L784"><code>clay_small</code></a>:
+<ul>
+<li>MAE mask ratio: <code>0.75</code>,</li>
+<li>Image size: <code>512</code>,</li>
+<li>Self-attention patch size: <code>32</code>,</li>
+<li>ENCODER:
+<ul>
+<li><code>dim</code>: <code>768</code>,</li>
+<li><code>depth</code>: <code>12</code>,</li>
+<li><code>heads</code>: <code>12</code>,</li>
+<li><code>dim_head</code>: <code>64</code>,</li>
+<li><code>mlp_ratio</code>: <code>4</code>,</li>
+<li><code>dropout</code>: <code>0.0</code>,</li>
+<li><code>emb_dropout</code>: <code>0.0</code>,</li>
+</ul></li>
+<li>DECODER:
+<ul>
+<li><code>dim</code>: <code>512</code>,</li>
+<li><code>depth</code>: <code>8</code>,</li>
+<li><code>heads</code>: <code>8</code>,</li>
+<li><code>dim_head</code>: <code>64</code>,</li>
+<li><code>mlp_ratio</code>: <code>4</code>,</li>
+<li><code>dropout</code>: <code>0.0</code>,</li>
+<li><code>emb_dropout</code>: <code>0.0</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>We do not use Data Augmentation</strong>. With learnable location and time embeddings we cannot use data augmentation. We do not use any other regularization techniques. We not use MixUp or CutMix, as it would need a complex tweak to carry over the metadata (location and time) to the mixed up images.</p>
+</section>
+<section id="performance-metrics" class="level2">
+<h2 class="anchored" data-anchor-id="performance-metrics">Performance Metrics</h2>
+<p>The model shows the following performance characteristics for its Masked Autoencoder objective: * Training loss: <code>0.52</code> for <code>v0.1</code>. * Validation loss: <code>0.46</code> for <code>v0.1</code>.</p>
+</section>
+<section id="known-limitations" class="level2">
+<h2 class="anchored" data-anchor-id="known-limitations">Known Limitations</h2>
+<ul>
+<li>The model is trained on Sentinel data only.</li>
+<li>Sentinel data only covers land and coastal waters.</li>
+<li>We only train on a ver small sample of the Sentinel archives, both in terms of spatial coverage and time.</li>
+<li>We do not train on the poles, and we do not train on open ocean, nor ocean nor atmospheric data.</li>
+<li>We do not train on night time data.</li>
+<li>We do not explicitly include extreme events in the training data.</li>
+<li>For <code>v0</code> we only train at most 3 different times per location.</li>
+</ul>
+<section id="clouds-and-other-source-of-noise" class="level3">
+<h3 class="anchored" data-anchor-id="clouds-and-other-source-of-noise">Clouds and other source of “noise”:</h3>
+<p>In most EO applications clouds, cloud shadows, smog, atmospheric scattering, mid-air planes and other non-ground registrations are considered noise. We explicitly filter our clouds on our chips, but small clouds and their shadows might be present. As we increase the number of observations per location, and bands, we expect the model to learn to ignore single events but register patterns (places that are often cloudy or with smog).</p>
+</section>
+</section>
+<section id="known-biases" class="level2">
+<h2 class="anchored" data-anchor-id="known-biases">Known Biases:</h2>
+<p>[Discuss any biases]</p>
+</section>
+<section id="ethical-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="ethical-considerations">Ethical Considerations</h2>
+<p>Our goal is to lower the barrier to use EO data for biodiversity and climate change mitigation and adaptation.</p>
+<p>We focus on the undifferentiated baseline compute for most EO applications with a fully permissive license. This way we can encourage downstream users, both non-profit and for-profit to leapfrog their AI4EO services <em>made with Clay</em>, our independent, benchmarked, operational, open model. We aim thus to reducing the overall carbon footprint of EO applications, while providing state of the art baseline models for everyone.</p>
+</section>
+</section>
+<section id="training-specifications" class="level1">
+<h1>Training Specifications</h1>
+<section id="training-process" class="level2">
+<h2 class="anchored" data-anchor-id="training-process">Training Process</h2>
+<section id="data-factory" class="level3">
+<h3 class="anchored" data-anchor-id="data-factory">1. Data Factory</h3>
+<p>We use <a href="#">Microsoft Planetary Computer</a> to pull all the data. <a href="https://github.com/Clay-foundation/model/blob/main/scripts/datacube.py">Code</a></p>
+<p>For <code>v0</code> we used <a href="#">ESA’s Worldcover</a> 2021 to create a statistically representative sample of the Earth’s land cover. <a href="https://github.com/Clay-foundation/model/blob/main/scripts/landcover.sh">Code</a>.</p>
+<p>Our <a href="https://github.com/Clay-foundation/model/blob/main/scripts/landcover.py#L149">sampling function</a> aims to select ~1000 MGRS tiles, with <code>200</code> samples from the <code>2000</code> most land-cover diverse tiles, <code>50</code> samples from the <code>1000</code> single lanc cover class for all categories except water ( urban, wetland, mangroves, moss, cropland, trees, shrubland, grassland, bare, snow). For coastal data we select <code>100</code> samples from all tiles with between 30% an 70% water.</p>
+<p>For each selected MGRS tile, we split it into <a href="https://github.com/Clay-foundation/model/blob/main/scripts/tile.py#L21"><code>512x512</code></a> chips. We filter out chips with more than <a href="https://github.com/Clay-foundation/model/blob/main/scripts/tile.py#L23"><code>30%</code></a> clouds or bad pixels.</p>
+<p>We save each band into a different <code>.tif</code> file following the schema <code>claytile_{mgrs}_{date}_v{version}_{counter}.tif</code> where <code>mgrs</code> is the MGRS tile, <code>date</code> is the date of the observation, <code>version</code> is the version of the sampling strategy and <code>counter</code> is the counter of the chip in the tile [from left to right, from top to bottom].</p>
+<p>Finally we save that into <code>S3</code> under the version of the sampling strategy folder.</p>
+<p>Clay model <code>v0</code> uses <code>v2</code> sampling strategy, and corresponds to <code>1,045,224</code> chips (each a <code>.tif</code> file with 13 bands) and <code>6.4 TB</code>.</p>
+<p>The exact list of files used for <code>v0</code> is <a href="https://gist.github.com/brunosan/62247e5dc79684bdaca11cefae679e90">here</a> [5Mb zipped, 88Mb <code>.txt</code> list], generated using:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">aws</span> s3 ls s3://clay-tiles-02/ <span class="at">--recursive</span> <span class="at">--human-readable</span> <span class="at">--no-paginate</span> <span class="at">--summarize</span> <span class="op">&gt;</span> s3_listing_data_v2_model_v0.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="main-trainning-loop" class="level3">
+<h3 class="anchored" data-anchor-id="main-trainning-loop">2. Main Trainning loop</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>python trainer.py fit     <span class="op">--</span>ckpt_path<span class="op">=</span>checkpoints<span class="op">/</span>last.ckpt <span class="op">\</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                          <span class="op">--</span>data.batch_size<span class="op">=</span><span class="dv">1024</span> \  <span class="co">#change depending on your GPU memory</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                          <span class="op">--</span>data.data_dir<span class="op">=</span>s3:<span class="op">//</span>clay<span class="op">-</span>tiles<span class="op">-</span><span class="dv">0</span><span class="er">2</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="embeddings-creation." class="level3">
+<h3 class="anchored" data-anchor-id="embeddings-creation.">3. Embeddings creation.</h3>
+<p>We create embeddings for all the training data.</p>
+<p>We use the same training data source:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>python trainer.py predict <span class="op">--</span>ckpt_path<span class="op">=</span>checkpoints<span class="op">/</span>last.ckpt <span class="op">\</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                          <span class="op">--</span>data.batch_size<span class="op">=</span><span class="dv">1024</span> \  </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                          <span class="op">--</span>data.data_dir<span class="op">=</span>s3:<span class="op">//</span>clay<span class="op">-</span>tiles<span class="op">-</span><span class="dv">0</span><span class="er">2</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="computational-resources" class="level2">
+<h2 class="anchored" data-anchor-id="computational-resources">Computational Resources</h2>
+<ul>
+<li><strong>Compute</strong>: Clay <code>v0</code> and <code>v0.1</code> are the same training run on on AWS <code>g5.12xlarge</code> instance, which has 4 A10G GPUs (24 GB VRAM in each). <code>v0.1</code> is just more epochs.</li>
+<li><strong>Training Time</strong>: Each epoch takes ~15 hour. The model <code>v0</code> was trained for <code>2</code> epochs, and <code>v0.1</code> for <code>20</code> epochs. We did not continue as we saw both the training and validation losses plateauing.</li>
+</ul>
+</section>
+</section>
+<section id="model-exploration" class="level1">
+<h1>Model Exploration</h1>
+<section id="embeddings-exploration" class="level2">
+<h2 class="anchored" data-anchor-id="embeddings-exploration">Embeddings Exploration</h2>
+<p>The Embeddings in our model are the output of the <code>Transformer</code> encoder. It’s the “semantic” bottleneck betwen the encoder and the decoder. The encoder needs to abstract the semantics of the image into a single vector, so the decoder can reconstruct the image from that vector.</p>
+<p>These embeddings start as random vectors and slowly converge to a meaningful representation of the input data.</p>
+<p>Let’s read all the embeddings from the trainning data and see how they look like.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>embeddings_path <span class="op">=</span> Path(<span class="st">"../../data/clay-vector-embeddings-v001"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>embeddings <span class="op">=</span> madewithclay.embeddings.EmbeddingsHandler(embeddings_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>100%|██████████| 1088/1088 [00:04&lt;00:00, 224.62it/s]</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Total rows: 947019
+ Merging dataframes...
+Done!
+ Total rows:  947019</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>embeddings.gdf.head(n<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">source_url</th>
+<th data-quarto-table-cell-role="th">date</th>
+<th data-quarto-table-cell-role="th">embeddings</th>
+<th data-quarto-table-cell-role="th">geometry</th>
+<th data-quarto-table-cell-role="th">x</th>
+<th data-quarto-table-cell-role="th">y</th>
+<th data-quarto-table-cell-role="th">location</th>
+<th data-quarto-table-cell-role="th">start_date</th>
+<th data-quarto-table-cell-role="th">end_date</th>
+<th data-quarto-table-cell-role="th">version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>s3://clay-tiles-02/02/33PWP/2018-10-21/claytil...</td>
+<td>2018-10-21</td>
+<td>[0.0053703142, -0.0085538495, 0.0025720706, 0....</td>
+<td>POLYGON ((1675014.721 1416156.064, 1675015.662...</td>
+<td>1.672391e+06</td>
+<td>1.418797e+06</td>
+<td>33PWP</td>
+<td>2018-10-21</td>
+<td>2020-01-14</td>
+<td>v001</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>embeddings.plot_locations(max_rows<span class="op">=</span><span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Clay v0 release_files/figure-html/cell-4-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>These are some properties we expect from the embeddings:</p>
+<ul>
+<li>The “length” (L2norm) and distribution of lengths is a one proxy for how much informationm and how much range of semantics they might contain.</li>
+<li>We expect the embeddgins to cluster when representing different places with similar semantics. We can use <a href="https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding">tNSE</a> to reduce the dimensionality of the <code>712</code> dimensions manyfold into 2D while trying to keep the clustering.</li>
+<li>If we take visually similar chips, they should have a smaller distance between them than chips that are visually different. We can use <a href="https://en.wikipedia.org/wiki/Cosine_similarity">cosine similarity</a> to measure the distance between two embeddings.</li>
+</ul>
+<section id="l2norm-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="l2norm-distribution">L2norm distribution</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>embeddings.gdf[<span class="st">"l2norm"</span>] <span class="op">=</span> embeddings.gdf[<span class="st">"embeddings"</span>].<span class="bu">apply</span>(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">lambda</span> x: np.linalg.norm(x, <span class="bu">ord</span><span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_title(<span class="st">"L2 norm histogram"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_xlabel(<span class="st">"L2 norm"</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_ylabel(<span class="st">"Count"</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].hist(embeddings.gdf[<span class="st">"l2norm"</span>], bins<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_title(<span class="st">"L2 norm cumulative histogram"</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_xlabel(<span class="st">"L2 norm"</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_ylabel(<span class="st">"Cumulative count"</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].hist(embeddings.gdf[<span class="st">"l2norm"</span>], bins<span class="op">=</span><span class="dv">100</span>, density<span class="op">=</span><span class="va">True</span>, cumulative<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>peaks <span class="op">=</span> [<span class="fl">2.65</span>, <span class="fl">2.83</span>, <span class="fl">3.06</span>]</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> peaks:</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">0</span>].axvline(i, color<span class="op">=</span><span class="st">"red"</span>, linestyle<span class="op">=</span><span class="st">"--"</span>)</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    ax[<span class="dv">0</span>].axvline(i, color<span class="op">=</span><span class="st">"red"</span>, linestyle<span class="op">=</span><span class="st">"--"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Clay v0 release_files/figure-html/cell-6-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>We can see that ~80% of the embeddings are between <code>2.65</code> and <code>3.06</code>, with two peaks on the edges. We can explore samples from the tails to see what is going on.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>peak <span class="op">=</span> peaks[<span class="dv">0</span>]</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>embeddings.gdf[<span class="st">"distance_to_peak"</span>] <span class="op">=</span> (embeddings.gdf[<span class="st">"l2norm"</span>] <span class="op">-</span> peak).<span class="bu">abs</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>top3 <span class="op">=</span> embeddings.gdf.nsmallest(<span class="dv">3</span>, <span class="st">"distance_to_peak"</span>).index</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>embeddings.rgb_imgs(top3,local_folder<span class="op">=</span>Path(<span class="st">'../../data/rgbs/'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>  0%|          | 0/3 [00:00&lt;?, ?it/s]100%|██████████| 3/3 [00:04&lt;00:00,  1.40s/it]</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Clay v0 release_files/figure-html/cell-9-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+<p>They seem to correspond to chips with a lot of snow. I might make sense that the semantics here are both different and “smaller”.</p>
+<p>For the second peak we thus expect more complex, yet rare, semantics. Since the lenght is bigger and the peak much smaller than the rest.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>peak <span class="op">=</span> peaks[<span class="dv">2</span>]</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>embeddings.gdf[<span class="st">"distance_to_peak"</span>] <span class="op">=</span> (embeddings.gdf[<span class="st">"l2norm"</span>] <span class="op">-</span> peak).<span class="bu">abs</span>()</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>top3 <span class="op">=</span> embeddings.gdf.nsmallest(<span class="dv">3</span>, <span class="st">"distance_to_peak"</span>).index</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>embeddings.rgb_imgs(top3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>100%|██████████| 3/3 [00:07&lt;00:00,  2.53s/it]</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Clay v0 release_files/figure-html/cell-10-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+<p>This secondary peak seems to aggregate open water locations.</p>
+<p>And now, let’s just visualize the peak of the histogram, the most common “length” of the embeddings.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>peak <span class="op">=</span> peaks[<span class="dv">1</span>]</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>embeddings.gdf[<span class="st">"distance_to_peak"</span>] <span class="op">=</span> (embeddings.gdf[<span class="st">"l2norm"</span>] <span class="op">-</span> peak).<span class="bu">abs</span>()</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>top3 <span class="op">=</span> embeddings.gdf.nsmallest(<span class="dv">3</span>, <span class="st">"distance_to_peak"</span>).index</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>embeddings.rgb_imgs(top3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>100%|██████████| 3/3 [00:03&lt;00:00,  1.29s/it]</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Clay v0 release_files/figure-html/cell-11-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Min/Max entropy, as measure or “smooth” and “rough” semantics.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">#make the stdev of the vector on column embeddings</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>embeddings.gdf[<span class="st">"stdev"</span>] <span class="op">=</span> embeddings.gdf[<span class="st">"embeddings"</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: np.std(x))</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co">#biggest stdev index</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>top3 <span class="op">=</span> embeddings.gdf.nlargest(<span class="dv">3</span>, <span class="st">"stdev"</span>).index</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(top3)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>embeddings.rgb_imgs(top3,local_folder<span class="op">=</span>Path(<span class="st">'../../data/rgbs/'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Index([391697, 466977, 646521], dtype='int64')</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>100%|██████████| 3/3 [00:04&lt;00:00,  1.64s/it]</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Clay v0 release_files/figure-html/cell-12-output-3.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>top3 <span class="op">=</span> embeddings.gdf.nsmallest(<span class="dv">3</span>, <span class="st">"stdev"</span>).index</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(top3)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>embeddings.rgb_imgs(top3,local_folder<span class="op">=</span>Path(<span class="st">'../../data/rgbs/'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Index([713536, 446810, 210232], dtype='int64')</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>100%|██████████| 3/3 [00:08&lt;00:00,  2.82s/it]</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Clay v0 release_files/figure-html/cell-13-output-3.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="benchmarking" class="level2">
+<h2 class="anchored" data-anchor-id="benchmarking">Benchmarking</h2>
+</section>
+</section>
+<section id="benchmark-dataset-labels" class="level1">
+<h1>Benchmark dataset labels</h1>
+<p>A benchmark dataset is a collection of data used for evaluating the performance of algorithms, models or systems in a specific field of study. These datasets are crucial in providing a common ground for comparing different approaches, allowing researchers to assess the strengths and weaknesses of various methods. For Clay, we evaluate our model on benchmark datasets with suitable downstream tasks.</p>
+<p>For our initial benchmark dataset, we’ve implemented the <a href="https://beta.source.coop/repositories/c2sms/c2smsfloods/description">Cloud to Street - Microsoft flood dataset</a>. It is what we will use in our initial linear probing experiments and evaluation of finetuning on a downstream task. The task itself is <a href="https://paperswithcode.com/task/semantic-segmentation">segmentation</a> of water pixels associated with recorded flood events.</p>
+<p>The original dataset consists of 2/3 of our Foundation model’s datacube inputs (Sentinel-1 and Sentinel-2) along with raster water mask labels for both sensors. Each image is 512x512 pixels in terms of width and height. The original Sentinel-2 images are L1C, which is Top-of-Atmosphere reflectance. We are training Clay with surface reflectance, however, so we ultimately used the geospatial bounds from the GeoTIFF and image timestamp (from the granule name) to query <a href="https://planetarycomputer.microsoft.com/dataset/sentinel-2-l2a">Microsoft Planetary Computer’s STAC API for L2A (Bottom-of-Atmosphere a.k.a. “surface reflectance”) Sentinel-2</a> scenes in the same time and space, with the same channels expected by Clay. We then followed the same <code>datacube</code> creation logic to generate datacubes with Sentinel-1 VV and VH and the Copernicus digital elevation model (DEM). We also ensured that the Sentinel-1 data was within a +/- 3 day interval of each reference Sentinel-2 scene (same method used by the benchmark dataset authors) and that the Sentinel-1 data was indeed already included in the bechmark datasets list of granules. The datacubes generated have all three inputs matching the exact specs of the Foundation model’s training data, at 512x512 pixels.</p>
+<p>Here is an example of a datacube we generated for the dataset:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/Clay-foundation/model/assets/23487320/94dffcf5-4075-4c17-ac96-01c11bcb299b.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">datacube</figcaption>
+</figure>
+</div>
+<p>The images left to right show a true color representation of the Sentinel-2 scene, the Sentinel-1 VH polarization and the digital elevation model.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/Clay-foundation/model/assets/23487320/4ac92af7-6931-4249-a920-7d29453b9b31.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">gt</figcaption>
+</figure>
+</div>
+<p>Here we have something similar, but this time just the Sentinel-1 and Sentinel-2 scenes with the Sentinel-1 water mask (ground truth) overlaid.</p>
+<p>Last note on this benchmark dataset that we’ve adapted for Clay, we made sure to preserve the metadata for timestamp and geospatial coordinates in the datacube such that we can embed information in the way that the Clay Foundation model expects. We also preserve the flood event information too, for analysis during finetuning.</p>
+<p>The script for generating these datacubes is at https://github.com/Clay-foundation/model/blob/c2smsfloods_benchmark_datapipeline/scripts/datacube_benchmark.py. You’ll need an AWS account and Microsoft Planetary Computer API Key to run this. The data is queried from Microsoft Planetary Computer STAC APIs, read and processed in memory, and the datacubes are written directly to AWS S3.</p>
+<section id="fine-tuning" class="level2">
+<h2 class="anchored" data-anchor-id="fine-tuning">Fine-tuning</h2>
+<p>We can explore a fine-tuning experiment on the benchmark dataset. We’ll use the MGRS tile <code>33TTG</code>.</p>
+<p>Create the datacube for the tile, using the data factory:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>madewithclay.data.factory(<span class="st">'33TTG'</span>,<span class="st">'2018-12-27'</span>,<span class="st">'v0'</span>,Path(<span class="st">'../../data/EU'</span>))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Method prepare_data_for_location_and_time not implemented yet.</code></pre>
+</div>
+</div>
+<p>We can now take the pre-trained model and finetune it on the target dataset.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>madewithclay.model.Model()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Only one version available for now: v0.0
+Target model v0.0</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<pre><code>&lt;madewithclay.model.Model&gt;</code></pre>
+</div>
+</div>
+<p>python trainer.py fit –ckpt_path=checkpoints/last.ckpt –data.data_dir=local_folder</p>
+<p>python trainer.py predict –ckpt_path=checkpoints/last.ckpt –data.data_dir=/home/brunosan/data/Clay/EU/</p>
+<p>We can now load these fine-tuned embeddings</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>EU_embeddings_path <span class="op">=</span> Path(<span class="st">"../../data/EU/embeddings/"</span>)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>EU_embeddings <span class="op">=</span> madewithclay.embeddings.EmbeddingsHandler(EU_embeddings_path)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>EU_embeddings.gdf.drop_duplicates(subset<span class="op">=</span><span class="st">'geometry'</span>,inplace<span class="op">=</span><span class="va">True</span>) <span class="co">#drop duplicates for this test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>100%|██████████| 2/2 [00:00&lt;00:00, 33.28it/s]</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Total rows: 1097
+ Merging dataframes...
+Done!
+ Total rows:  1097</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>EU_embeddings.plot_locations()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Clay v0 release_files/figure-html/cell-17-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>EU_embeddings.gdf[<span class="st">'chips'</span>] <span class="op">=</span> EU_embeddings.gdf.<span class="bu">apply</span>(<span class="kw">lambda</span> x: Path(x[<span class="st">'source_url'</span>]).name, axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>embeddings.gdf[<span class="st">'chips'</span>] <span class="op">=</span> embeddings.gdf.<span class="bu">apply</span>(<span class="kw">lambda</span> x: Path(x[<span class="st">'source_url'</span>]).name, axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>One way to compare the effect of finetunning is to compare the distance, and rgbs, of the closest embeddings from the pre-trained model and the fine-tuned model.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.spatial.distance <span class="im">import</span> pdist, squareform</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>vector_list <span class="op">=</span> np.stack(EU_embeddings.gdf.embeddings.values)</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>distance_matrix <span class="op">=</span> squareform(pdist(vector_list, metric<span class="op">=</span><span class="st">'cosine'</span>))</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace diagonal (self-distance) with np.nan to ignore them in finding the closest</span></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>np.fill_diagonal(distance_matrix, np.nan)</span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>closest_indices_top_10 <span class="op">=</span> np.empty((distance_matrix.shape[<span class="dv">0</span>], <span class="dv">10</span>), dtype<span class="op">=</span><span class="bu">int</span>)</span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(distance_matrix.shape[<span class="dv">0</span>]):</span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>    closest_indices_top_10[i] <span class="op">=</span> np.argpartition(distance_matrix[i], <span class="dv">10</span>)[:<span class="dv">10</span>]</span>
+<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the result for the vectors with smallest distances</span></span>
+<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a>average_distances <span class="op">=</span> []</span>
+<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, indices <span class="kw">in</span> <span class="bu">enumerate</span>(closest_indices_top_10):</span>
+<span id="cb36-21"><a href="#cb36-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute the average distance of the top 10 closest vectors</span></span>
+<span id="cb36-22"><a href="#cb36-22" aria-hidden="true" tabindex="-1"></a>    avg_distance <span class="op">=</span> np.mean(distance_matrix[i, indices])</span>
+<span id="cb36-23"><a href="#cb36-23" aria-hidden="true" tabindex="-1"></a>    average_distances.append(avg_distance)</span>
+<span id="cb36-24"><a href="#cb36-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-25"><a href="#cb36-25" aria-hidden="true" tabindex="-1"></a><span class="co">#add column with the closest indices and average distance</span></span>
+<span id="cb36-26"><a href="#cb36-26" aria-hidden="true" tabindex="-1"></a>EU_embeddings.gdf[<span class="st">"closest_indices"</span>] <span class="op">=</span> closest_indices_top_10.tolist()</span>
+<span id="cb36-27"><a href="#cb36-27" aria-hidden="true" tabindex="-1"></a>EU_embeddings.gdf[<span class="st">"average_distance"</span>] <span class="op">=</span> average_distances</span>
+<span id="cb36-28"><a href="#cb36-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-29"><a href="#cb36-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-30"><a href="#cb36-30" aria-hidden="true" tabindex="-1"></a><span class="co"># histogram of average distances</span></span>
+<span id="cb36-31"><a href="#cb36-31" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb36-32"><a href="#cb36-32" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Average distance to 10 closest vectors"</span>)</span>
+<span id="cb36-33"><a href="#cb36-33" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Average distance"</span>)</span>
+<span id="cb36-34"><a href="#cb36-34" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>, <span class="fl">.01</span>)</span>
+<span id="cb36-35"><a href="#cb36-35" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Count"</span>)</span>
+<span id="cb36-36"><a href="#cb36-36" aria-hidden="true" tabindex="-1"></a>ax.axvline(<span class="fl">0.0001</span>, color<span class="op">=</span><span class="st">"red"</span>, linestyle<span class="op">=</span><span class="st">"--"</span>)</span>
+<span id="cb36-37"><a href="#cb36-37" aria-hidden="true" tabindex="-1"></a>ax.hist(average_distances, bins<span class="op">=</span><span class="dv">1000</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Clay v0 release_files/figure-html/cell-20-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">#indices where average distance is less than 0.0001 are basically water</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>water <span class="op">=</span> np.where(np.array(average_distances) <span class="op">&lt;</span> <span class="fl">0.0001</span>)[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>EU_embeddings.plot_locations(indices<span class="op">=</span>water)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Clay v0 release_files/figure-html/cell-22-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>These are the 10 random locations with their semantically closest locations. First the reference, then the closest from left to right, from top to bottom.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    row <span class="op">=</span> EU_embeddings.gdf[EU_embeddings.gdf[<span class="st">'average_distance'</span>] <span class="op">&gt;</span> <span class="fl">0.002</span> ].sample(<span class="dv">1</span>)</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">#print(row)</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    indices <span class="op">=</span> [row.index[<span class="dv">0</span>],</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>               <span class="op">*</span>row[<span class="st">'closest_indices'</span>].values[<span class="dv">0</span>]]</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(indices)</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>    EU_embeddings.plot_locations(indices<span class="op">=</span>indices[:<span class="dv">6</span>])</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    EU_embeddings.rgb_imgs(indices[:<span class="dv">6</span>],local_folder<span class="op">=</span>Path(<span class="st">'../../data/rgbs/'</span>,verbose<span class="op">=</span><span class="va">True</span>),force_fetch<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[405, 125, 60, 275, 412, 130, 3, 416, 195, 333, 372]
+[181, 281, 70, 122, 175, 102, 264, 420, 286, 242, 210]
+[313, 110, 14, 171, 80, 69, 182, 209, 166, 251, 48]
+[74, 29, 236, 80, 137, 175, 181, 420, 251, 72, 410]
+[307, 192, 23, 295, 46, 276, 167, 433, 376, 88, 25]</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Clay v0 release_files/figure-html/cell-23-output-2.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>100%|██████████| 6/6 [00:00&lt;00:00, 189.97it/s]
+100%|██████████| 6/6 [00:00&lt;00:00, 376.79it/s]
+100%|██████████| 6/6 [00:00&lt;00:00, 239.45it/s]
+100%|██████████| 6/6 [00:00&lt;00:00, 172.84it/s]
+100%|██████████| 6/6 [00:00&lt;00:00, 185.18it/s]</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Clay v0 release_files/figure-html/cell-23-output-4.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Clay v0 release_files/figure-html/cell-23-output-5.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Clay v0 release_files/figure-html/cell-23-output-6.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Clay v0 release_files/figure-html/cell-23-output-7.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Clay v0 release_files/figure-html/cell-23-output-8.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Clay v0 release_files/figure-html/cell-23-output-9.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Clay v0 release_files/figure-html/cell-23-output-10.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Clay v0 release_files/figure-html/cell-23-output-11.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Clay v0 release_files/figure-html/cell-23-output-12.png" class="img-fluid"></p>
+</div>
+</div>
+<p>We can check the distance to the closest embedding in the pre-trained model and the fine-tuned model. We can see that the fine-tuned model has understood finer details of the semantics of the locations, so the distances are bigger than the pre-trained model.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
